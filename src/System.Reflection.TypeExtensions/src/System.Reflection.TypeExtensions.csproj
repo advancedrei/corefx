@@ -3,10 +3,8 @@
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
   <PropertyGroup>
     <AssemblyName>System.Reflection.TypeExtensions</AssemblyName>
-    <AssemblyVersion>4.1.1.0</AssemblyVersion>
     <IsPartialFacadeAssembly Condition="'$(TargetGroup)' != 'netcore50aot'">true</IsPartialFacadeAssembly>
     <ProjectGuid>{1E689C1B-690C-4799-BDE9-6E7990585894}</ProjectGuid>
-    <PackageTargetFramework Condition="'$(PackageTargetFramework)' == ''">netstandard1.5</PackageTargetFramework>
     <NuGetTargetMoniker Condition="'$(TargetGroup)' == ''">.NETStandard,Version=v1.5</NuGetTargetMoniker>
   </PropertyGroup>
   <!-- Default configurations to help VS understand the configurations -->
@@ -34,7 +32,7 @@
     <Compile Include="System\Reflection\ModuleExtensions.cs" />
     <Compile Include="System\Reflection\MethodInfoExtensions.cs" />
     <Compile Include="System\Reflection\PropertyInfoExtensions.cs" />
-    <Compile Include="System\Reflection\TypeExtensions.netcore50aot.cs" />
+    <Compile Include="System\Reflection\TypeExtensions.CoreRT.cs" />
     <Compile Include="Internal\Reflection\Extensions\NonPortable\InheritedPropertyInfo.cs" />
     <Compile Include="Internal\Reflection\Extensions\NonPortable\MemberEnumerator.cs" />
     <Compile Include="Internal\Reflection\Extensions\NonPortable\MemberPolicies.cs" />

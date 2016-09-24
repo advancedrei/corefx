@@ -5,6 +5,7 @@
 #cmakedefine01 HAVE_PIPE2
 #cmakedefine01 HAVE_STAT_BIRTHTIME
 #cmakedefine01 HAVE_GNU_STRERROR_R
+#cmakedefine01 HAVE_READDIR_R
 #cmakedefine01 HAVE_DIRENT_NAME_LEN
 #cmakedefine01 HAVE_MNTINFO
 #cmakedefine01 HAVE_STATFS_FSTYPENAME
@@ -59,6 +60,8 @@
 #cmakedefine01 HAVE_GSS_SPNEGO_MECHANISM
 #cmakedefine01 HAVE_GSS_KRB5_CRED_NO_CI_FLAGS_X
 #cmakedefine01 HAVE_HEIMDAL_HEADERS
+#cmakedefine01 HAVE_NSGETENVIRON
+#cmakedefine01 HAVE_CRT_EXTERNS_H
 
 // Mac OS X has stat64, but it is deprecated since plain stat now
 // provides the same 64-bit aware struct when targeting OS X > 10.5

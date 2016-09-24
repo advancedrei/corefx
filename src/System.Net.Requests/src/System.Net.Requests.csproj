@@ -8,11 +8,9 @@
     <ProjectGuid>{5EE76DCC-9FD5-47FD-AB45-BD0F0857740F}</ProjectGuid>
     <RootNamespace>System.Net.Requests</RootNamespace>
     <AssemblyName>System.Net.Requests</AssemblyName>
-    <AssemblyVersion>4.0.12.0</AssemblyVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsPartialFacadeAssembly Condition="'$(TargetGroup)' == 'net46'">true</IsPartialFacadeAssembly>
     <ResourcesSourceOutputDirectory Condition="'$(TargetGroup)' == 'net46'">None</ResourcesSourceOutputDirectory>
-    <PackageTargetFramework Condition="'$(PackageTargetFramework)' == ''">netstandard1.3</PackageTargetFramework>
     <NuGetTargetMoniker Condition="'$(TargetGroup)' == ''">.NETStandard,Version=v1.3</NuGetTargetMoniker>
   </PropertyGroup>
   <!-- Help VS understand available configurations -->
@@ -23,12 +21,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'net46_Debug|AnyCPU'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'net46_Release|AnyCPU'" />
   <ItemGroup Condition="'$(TargetGroup)' != 'net46'">
+    <Compile Include="System\Net\AuthenticationManager.cs" />
+    <Compile Include="System\Net\Authorization.cs" />
+    <Compile Include="System\Net\BindIPEndPoint.cs" />
     <Compile Include="System\Net\HttpRequestHeader.cs" />
     <Compile Include="System\Net\HttpWebRequest.cs" />
     <Compile Include="System\Net\HttpWebResponse.cs" />
+    <Compile Include="System\Net\IAuthenticationModule.cs" />
+    <Compile Include="System\Net\ICertificatePolicy.cs" />
+    <Compile Include="System\Net\ICredentialPolicy.cs" />
     <Compile Include="System\Net\IWebRequestCreate.cs" />
     <Compile Include="System\Net\ProtocolViolationException.cs" />
     <Compile Include="System\Net\RequestStream.cs" />
+    <Compile Include="System\Net\SecurityProtocolType.cs" />
+    <Compile Include="System\Net\ServicePoint.cs" />
+    <Compile Include="System\Net\ServicePointManager.cs" />
     <Compile Include="System\Net\SystemWebProxy.cs" />
     <Compile Include="System\Net\TaskExtensions.cs" />
     <Compile Include="System\Net\WebException.cs" />
@@ -36,6 +43,11 @@
     <Compile Include="System\Net\WebHeaderCollection.cs" />
     <Compile Include="System\Net\WebRequest.cs" />
     <Compile Include="System\Net\WebResponse.cs" />
+    <Compile Include="System\Net\Cache\HttpCacheAgeControl.cs" />
+    <Compile Include="System\Net\Cache\HttpRequestCacheLevel.cs" />
+    <Compile Include="System\Net\Cache\HttpRequestCachePolicy.cs" />
+    <Compile Include="System\Net\Cache\RequestCacheLevel.cs" />
+    <Compile Include="System\Net\Cache\RequestCachePolicy.cs" />
     <Compile Include="$(CommonPath)\System\Net\HttpKnownHeaderNames.cs">
       <Link>Common\System\Net\HttpKnownHeaderNames.cs</Link>
     </Compile>
